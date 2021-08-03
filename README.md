@@ -3,8 +3,11 @@
 This generator uses bezier curves in GODOT to create values suitable for driving a 10bit or 12bit Digital to Analog converter.
 
 The curve of a PATH2D is tesselated to create an array of XY coordinates.
-The missing points are filled to provide a timebase compatible array of coordinates
+
+The missing points are linearly interpolated to be timebase compatible. 
+
 Y values can be exported in Natural and Inverted forms
+
 The inverted form is also available scaled as an export for use with 10 or 12bit DAC
 
 1: Install GODOT https://godotengine.org/ - min v3.3.2
