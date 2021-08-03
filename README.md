@@ -18,6 +18,7 @@ The inverted form is also available scaled as an export for use with 10 or 12bit
 
 4: Adjust waveform as required
 ![image](https://user-images.githubusercontent.com/40808238/127966193-b73fbec6-ef26-4798-9af8-db5c38c0bd9b.png)
+
 5: Run the "ECG_Generator" node with F5 or Play button
 
 6: Verify content
