@@ -1,0 +1,116 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://raw_ecg.tres" type="Curve2D" id=1]
+[ext_resource path="res://Raw.gd" type="Script" id=2]
+[ext_resource path="res://Verticals.gd" type="Script" id=3]
+[ext_resource path="res://Graticule.tscn" type="PackedScene" id=4]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array(  )
+}
+
+[node name="ECG_Generator" type="Node2D"]
+
+[node name="Raw" type="Path2D" parent="."]
+position = Vector2( 3.89158, -49.4116 )
+curve = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="XYGraticule" parent="Raw" instance=ExtResource( 4 )]
+position = Vector2( 400, 350 )
+
+[node name="RawGraticule" parent="Raw" instance=ExtResource( 4 )]
+position = Vector2( 5, 350 )
+
+[node name="Verticals" type="Path2D" parent="Raw"]
+position = Vector2( 505.452, 85.4071 )
+curve = SubResource( 1 )
+script = ExtResource( 3 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Raw"]
+margin_left = 729.763
+margin_top = 50.6838
+margin_right = 1022.76
+margin_bottom = 358.684
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Raw"]
+margin_left = 405.0
+margin_top = 330.0
+margin_right = 498.0
+margin_bottom = 350.0
+text = "Export as X,Y"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button5" type="Button" parent="Raw"]
+margin_left = 469.072
+margin_top = 204.525
+margin_right = 587.072
+margin_bottom = 224.525
+text = "Export as 12bit Y"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button6" type="Button" parent="Raw"]
+margin_left = 470.407
+margin_top = 235.226
+margin_right = 588.407
+margin_bottom = 255.226
+text = "Export as 10bit Y"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="Button" parent="Raw"]
+margin_left = 4.23608
+margin_top = 330.0
+margin_right = 100.236
+margin_bottom = 350.0
+text = "Export as raw"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="Raw"]
+margin_left = 467.421
+margin_top = 96.4031
+margin_right = 602.421
+margin_bottom = 116.403
+text = "Export as Original Y"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button7" type="Button" parent="Raw"]
+margin_left = 467.421
+margin_top = 127.104
+margin_right = 606.421
+margin_bottom = 147.104
+text = "Export as Inverted Y"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Raw"]
+margin_left = 469.439
+margin_top = 67.8193
+margin_right = 600.439
+margin_bottom = 87.8193
+text = "Show export folder"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Raw/Button" to="Raw" method="_on_Button_pressed"]
+[connection signal="pressed" from="Raw/Button5" to="Raw" method="_on_Button5_pressed"]
+[connection signal="pressed" from="Raw/Button6" to="Raw" method="_on_Button6_pressed"]
+[connection signal="pressed" from="Raw/Button4" to="Raw" method="_on_Button4_pressed"]
+[connection signal="pressed" from="Raw/Button3" to="Raw" method="_on_Button3_pressed"]
+[connection signal="pressed" from="Raw/Button7" to="Raw" method="_on_Button7_pressed"]
+[connection signal="pressed" from="Raw/Button2" to="Raw" method="_on_Button2_pressed"]
